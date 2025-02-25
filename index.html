@@ -4,18 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="loadDefaultCities()">
     <div class="container">
-        <h1>Weather App</h1>
+        <!-- TOP HALF: Default Cities -->
+        <div class="default-cities-wrapper">
+            <div class="default-cities">
+                <div class="city-box delhi" id="delhi" onclick="getWeather('Delhi')">
+                    <span>Delhi</span>
+                    <div class="weather-info">
+                        <i class="fas fa-cloud" id="delhi-icon"></i>
+                        <p id="delhi-temp">--°C</p>
+                        <p id="delhi-desc">Loading...</p>
+                    </div>
+                </div>
+                <div class="city-box mumbai" id="mumbai" onclick="getWeather('Mumbai')">
+                    <span>Mumbai</span>
+                    <div class="weather-info">
+                        <i class="fas fa-cloud" id="mumbai-icon"></i>
+                        <p id="mumbai-temp">--°C</p>
+                        <p id="mumbai-desc">Loading...</p>
+                    </div>
+                </div>
+                <div class="city-box kolkata" id="kolkata" onclick="getWeather('Kolkata')">
+                    <span>Kolkata</span>
+                    <div class="weather-info">
+                        <i class="fas fa-cloud" id="kolkata-icon"></i>
+                        <p id="kolkata-temp">--°C</p>
+                        <p id="kolkata-desc">Loading...</p>
+                    </div>
+                </div>
+                <div class="city-box chennai" id="chennai" onclick="getWeather('Chennai')">
+                    <span>Chennai</span>
+                    <div class="weather-info">
+                        <i class="fas fa-cloud" id="chennai-icon"></i>
+                        <p id="chennai-temp">--°C</p>
+                        <p id="chennai-desc">Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM HALF: Search Box -->
         <div class="search-box">
             <input type="text" id="cityInput" placeholder="Enter city name">
             <button onclick="getWeather()">Search</button>
         </div>
-        <div id="weatherInfo" class="weather-box">
-            <p>Enter a city to see the weather</p>
-        </div>
+        
+        <!-- Searched City Weather -->
+        <div id="weatherInfoContainer"></div>
     </div>
     <script src="script.js"></script>
 </body>

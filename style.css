@@ -1,0 +1,211 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url("wetbg2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main Container */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Default Cities Wrapper */
+.default-cities-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.default-cities {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    width: fit-content;
+    padding-left: 50px;
+}
+
+/* City Boxes */
+.city-box {
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 3px 6px rgba(26, 25, 25, 0.2);
+    min-height: 180px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Background Images for Each City */
+.city-box.delhi { background-image: url('delhi.png'); }
+.city-box.mumbai { background-image: url('mumbai.jpg'); }
+.city-box.kolkata { background-image: url('kolkata.jpg'); }
+.city-box.chennai { background-image: url('chennai.jpg'); }
+
+/* Overlay to Improve Text Visibility */
+.city-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+}
+
+.city-box span {
+    position: relative;
+    z-index: 2;
+}
+
+/* Weather Info in City Boxes */
+.weather-info {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.weather-info i {
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+.weather-info p {
+    margin: 2px 0;
+    font-size: 16px;
+}
+
+/* Search Box */
+.search-box {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+input {
+    padding: 18px;
+    border: 2px solid #4facfe;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 18px;
+}
+
+button {
+    padding: 18px 25px;
+    border: none;
+    background: #4facfe;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+    width: 50%;
+}
+
+button:hover {
+    background: #00c2fe;
+}
+
+/* Weather Box Styling */
+.weather-box {
+    /* background: rgba(255, 255, 255, 0.9); */
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    margin: 45px 450px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+/* City Name Styling */
+.weather-box h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f1e7e7;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Weather Icon */
+.weather-icon {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+/* Temperature & Other Info */
+.weather-box p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #fdf9f9;
+}
+
+
+/* Forecast Container */
+.forecast-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.forecast-box {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+/* Individual Day Forecast */
+.forecast-day {
+    text-align: center;
+    padding: 10px;
+    min-width: 100px;
+}
+
+.forecast-day p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Adjusting for small screens */
+@media (max-width: 600px) {
+    .forecast-box {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+    
+    .forecast-day {
+        min-width: 80px;
+    }
+}
